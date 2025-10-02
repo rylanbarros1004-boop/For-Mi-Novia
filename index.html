@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h2 class="logo">For You 💕</h2>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#message">Message</a></li>
+        <li><a href="#gallery">Memories</a></li>
+        <li><a href="#contact">For You</a></li>
+      </ul>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Custom Music Player -->
+  <div class="music-player">
+    <button onclick="togglePlay()" id="play-btn">▶</button>
+    <button onclick="stopMusic()">⏹</button>
+    <input type="range" id="progress" value="0" step="1">
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+  </div>
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Hi Love ❤️</h1>
+    <p>This website is just for you. Because you mean the world to me.</p>
+  </section>
+
+  <!-- Message Section -->
+  <section class="message" id="message">
+    <h2>My Message To You</h2>
+    <p>
+      Every day with you is a blessing.  
+      I love your smile, your laugh, and the way you make everything brighter.  
+      You are my favorite person in the whole world, mi amor. 💖
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <h2>Our Memories 📸</h2>
+    <div class="photos">
+      <img src="IMG_5482.webp" alt="Memory 1" width="600" height="400">
+      <img src="IMG_8867.png" alt="Memory 2" width="600" height="400">
+      <img src="happy-birthday-ashleigh.gif" alt="Memory 3" width="600" height="400">
+    </div>
+    <p>(Some Memories Of Yo Y Tu 💕)</p>
+  
+    <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>For You 💌</h2>
+    <p>Whenever you feel sad, come here and click the button 👇</p>
+    <button onclick="loveMessage()">Click Me 💖</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ just for you</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
