@@ -208,7 +208,10 @@ footer {
 /* Existing styles above... */
 
 /* Responsive Design */
-@media (max-width: 768px) {
+.button, button, .btn {
+  display: inline-block !important;
+}
+
   /* Navbar stacked for smaller screens */
   .nav-links {
     flex-direction: column;
@@ -346,6 +349,7 @@ body {
 }
 
 }
+
 
 
 
