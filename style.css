@@ -212,7 +212,8 @@ footer {
   display: inline-block !important;
 }
 
-  /* Navbar stacked for smaller screens */
+ /* Responsive Navbar */
+@media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
     background: #0066cc;
@@ -235,7 +236,6 @@ footer {
     position: relative;
   }
 
-  /* Add a mobile menu button */
   .menu-btn {
     display: block;
     background: white;
@@ -247,10 +247,6 @@ footer {
   }
 }
 
-/* Default hidden on desktop */
-.menu-btn {
-  display: none;
-}
 
 /* Music Player on Mobile */
 @media (max-width: 500px) {
@@ -300,11 +296,6 @@ footer {
   letter-spacing: 1px;
 }
 
-/* Bad for mobile */
-.container {
-  width: 800px;
-}
-
 /* Good for mobile */
 .container {
   width: 90%; /* takes 90% of screen width */
@@ -327,7 +318,6 @@ img {
   }
 }
 
-/* For mobile phones */
 @media (max-width: 480px) {
   h1 {
     font-size: 24px;
@@ -335,19 +325,12 @@ img {
   nav {
     font-size: 14px;
   }
-
-/* Mobile-first */
-body {
-  font-size: 16px;
 }
 
-/* Tablet and up */
 @media (min-width: 768px) {
   body {
     font-size: 18px;
   }
-}
-
 }
 
 
