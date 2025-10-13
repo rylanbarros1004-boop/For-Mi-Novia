@@ -42,27 +42,47 @@ function loveMessage() {
   const messages = [
     "I love you more than words can say ❤️",
     "You are my everything 💕",
-    "Forever and always, it’s you 💍",
-    "You make my world brighter 🌎✨",
-    "Eres mi sol, mi luna, y todas mis estrellas 🌙☀️⭐"
+    "Te Amo mucho mucho mucho Mi Amor 😍",
+    "I Love You so so so so fucking much 😘",
+    "Eres mi sol, mi luna, y todas mis estrellas 🌙☀️⭐",
+    "Mahal Kita, Mahal Ko 💖",
+    "You Are My Emergency Contact ❤️‍🔥"
   ];
   const randomMessage = messages[Math.floor(Math.random() * messages.length)];
   alert(randomMessage);
 }
-// Toggle mobile menu
-function toggleMenu() {
-  const nav = document.getElementById("nav-links");
-  if (nav.style.display === "flex") {
-    nav.style.display = "none";
-  } else {
-    nav.style.display = "flex";
-    nav.style.flexDirection = "column";
-  }
-}
-// Close menu on link click (for mobile)
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    const nav = document.getElementById("nav-links");
-    nav.style.display = "none";
+// Wait until the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  const links = navLinks.querySelectorAll("a");
+
+  // Toggle dropdown menu
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+
+    // Change menu icon between ☰ and ✕
+    menuBtn.textContent = navLinks.classList.contains("show") ? "✕" : "☰";
   });
-});     
+
+  // Close menu when a link is clicked
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      menuBtn.textContent = "☰";
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+      navLinks.classList.remove("show");
+      menuBtn.textContent = "☰";
+    }
+  });
+
+  // Example function for your love button
+  window.loveMessage = function() {
+    alert("I love you, my beautiful Angel! 💖");
+  };
+});
