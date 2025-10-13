@@ -1,67 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For My Love ❤️</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <h2 class="logo">For You 💕</h2>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="Messages.html" class="btn">Three Months</a></li>
-        <li><a href="second.html" class="btn">Our Memories</a></li>
-        <li><a href="forher.html" class="btn">For You</a></li>
+      <div class="logo">For My Love ❤️</div>
+      <div class="menu-btn" id="menu-btn">☰</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="second.html">Home</a></li>
+        <li><a href="forher.html">Three Months</a></li>
+        <li><a href="Messages.html">Our Memories</a></li>
+        <li><a href="readourstory.html">For You</a></li>
       </ul>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
     </nav>
   </header>
-
-  <!-- Custom Music Player -->
-  <div class="music-player">
-    <button onclick="togglePlay()" id="play-btn">▶</button>
-    <button onclick="stopMusic()">⏹</button>
-    <input type="range" id="progress" value="0" step="1">
-    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
-  </div>
-<audio id="bg-music" autoplay loop controls>
-  <source src="Eres-Mi-Sol-Eres-Mi-Luna-Final.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 
   <!-- Hero Section -->
   <section class="hero" id="home">
     <h1>Hi Mahal Ko ❤️</h1>
-    <p>This website is just for Us. You can view all our special moments together. </p>
+    <p>This website is just for us. You can view all our special moments together.</p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery" id="gallery">
+    <h2>Three Months Together</h2>
+    <p>Our special memories so far 💖</p>
   </section>
 
   <!-- Message Section -->
-  <section class="message" id="message">
+  <section class="message" id="memories">
     <h2>My Message To You</h2>
     <p>
-      Every day with you is a blessing.  
-      I love your smile, your laugh, and the way you make everything brighter. Thanbk you for being you and for letting me be a part of your life. 
-      You are my favorite person in the whole world, mi amor. 💖
+      Every day with you is a blessing. I love your smile, your laugh,
+      and the way you make everything brighter. Thank you for being you
+      and for letting me be a part of your life. You are my favorite
+      person in the whole world, Mi Amor 💖
     </p>
-  <!-- Contact Section -->
+  </section>
+
+  <!-- Contact / For You Section -->
   <section class="contact" id="contact">
     <h2>For You 💌</h2>
-    <p>Whenever you feel sad, come here and click the button 👇 These are words of love just for you, My Beautiful Angel</p>
+    <p>
+      Whenever you feel sad, click the button below.
+      These are words of love just for you, my beautiful Angel 💖
+    </p>
     <button onclick="loveMessage()">Click Me 💖</button>
+  </section>
+
+  <!-- Music Player -->
+  <section class="music" id="music">
+    <audio controls>
+      <source src="Eres-Mi-Sol-Eres-Mi-Luna-Final.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 For You 💕. All rights reserved.</p>
   </footer>
-   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
 
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuBtn.textContent = navLinks.classList.contains("show") ? "✕" : "☰";
+    });
+
+    // Close dropdown when link is clicked
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+  </script>
   <script src="script.js"></script>
+</body>
+</html>
+
 
